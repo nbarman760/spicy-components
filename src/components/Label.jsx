@@ -1,6 +1,7 @@
 import './style.css';
-export const Label= ({text})=>{
+ const Label= ({text})=>{
     return (
         <label className="spicy__label">{text}</label>
     )
 }
+export default Label;

@@ -2,7 +2,7 @@
   "name": "spicy-components",
   "version": "0.1.5",
   "description": "React Form Elements with Validation",
-  "main": "index.js",
+  "main": "dist/index.js",
   "private": false,
   "babel": {
     "presets": [

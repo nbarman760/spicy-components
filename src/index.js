@@ -1,1 +1,2 @@
-export { Label } from './Label';
+import  Label  from './Label';
+export {Label};

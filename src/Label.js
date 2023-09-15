@@ -4,4 +4,4 @@ const Label = ({ text }) => {
   return <label className='spicy__label'>{text}</label>;
 };
 
-export default Button;
+export default Label;

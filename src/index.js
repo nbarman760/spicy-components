@@ -1,2 +1,3 @@
 import  Label  from './Label';
-export {Label};
+import Textbox from './Textbox';
+export {Label, Textbox};

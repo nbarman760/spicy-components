@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
+import React from 'react';
+
 import './style.css';
 
 const Textbox = (props)=> {

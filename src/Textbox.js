@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
-
+import './style.css';
 
 const Textbox = (props)=> {
     const [isValid, setIsValid]= useState(true);

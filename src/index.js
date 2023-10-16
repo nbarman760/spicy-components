@@ -1,3 +1,4 @@
 import  Label  from './Label';
 import Textbox from './Textbox';
-export {Label, Textbox};
+import DataTable from './DataTable';
+export {Label, Textbox, DataTable}; 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './style.css'
 const DataTable = ({ data, columns }) => {
     const [tableData, setTableData] = useState(data);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
@@ -26,7 +26,7 @@ const DataTable = ({ data, columns }) => {
                 value.toString().toLowerCase().includes(searchTerm.toLowerCase())
             )
         );
-
+        setCurrentPage(0);
         setTableData(filteredData);
     }, [sortConfig, searchTerm]);
 
@@ -60,42 +60,94 @@ const DataTable = ({ data, columns }) => {
         ));
     };
 
+
     const renderTableHeader = () => (
-            <tr>
-                {
-                    columns.map((col) => (
-                        <th key={col.key} onClick={() => handleSort(col.key)}>
-                            {col.name}
-                            {sortConfig.key === col.key && (<span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>)
-                            }
-                        </th>
-                    ))
+        <tr>
+            {
+                columns.map((col) => (
+                    <th key={col.key} onClick={() => handleSort(col.key)}>
+                        {col.name}
+                        {sortConfig.key === col.key && (<span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>)
+                        }
+                    </th>
+                ))
             }
-            </tr>
-        )
+        </tr>
+    )
 
 
     const pageCount = Math.ceil(tableData.length / itemsPerPage);
     const pages = new Array(pageCount).fill(null).map((_, i) => i);
+    const pagination = () => {
+        return (
+            <div className="pagination">
+                <button
+                    onClick={() => handlePageChange(0)}
+                    disabled={currentPage === 0}
+                >
+                    &lt;&lt;
+                </button>
+                <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 0}
+                >
+                    &lt;
+                </button>
+                <span>
+                    Page {currentPage + 1} of {pageCount}
+                </span>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === pageCount - 1}
+                >
+                    &gt;
+                </button>
+                <button
+                    onClick={() => handlePageChange(pageCount - 1)}
+                    disabled={currentPage === pageCount - 1}
+                >
+                    &gt;&gt;
+                </button>
+            </div>
+        )
+    }
 
     return (
         <div>
-            <input
-                type="text"
-                placeholder="Search..."
-                value={searchTerm}
-                onChange={handleSearch}
-            />
-            <table>
+            <div className="table-tools">
+                <div className="search-box">
+                    <i className="search-icon">🔍</i>
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+                <div className="table-tools-right">
+                    <button className="download-button">Download Excel</button>
+                    <button className="add-row-button">Add Row</button>
+                    <div className="more-actions">
+                        <button className="more-actions-button">More Actions</button>
+                        <div className="more-actions-dropdown">
+                            <button>Option 1</button>
+                            <button>Option 2</button>
+                            <button>Option 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table className='table'>
                 <thead>{renderTableHeader()}</thead>
                 <tbody>{renderTableData()}</tbody>
             </table>
             <div className="pagination">
-                {pages.map((page) => (
+                {pagination()}
+                {/* {pages.map((page) => (
                     <button key={page} onClick={() => handlePageChange(page)}>
                         {page + 1}
                     </button>
-                ))}
+                ))} */}
             </div>
         </div>
     );

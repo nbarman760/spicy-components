@@ -28,7 +28,7 @@ const DataTable = ({ data, columns }) => {
         );
 
         setTableData(filteredData);
-    }, [sortConfig, searchTerm, tableData]);
+    }, [sortConfig, searchTerm]);
 
     const handleSort = (key) => {
         let direction = 'asc';
@@ -61,17 +61,19 @@ const DataTable = ({ data, columns }) => {
     };
 
     const renderTableHeader = () => (
-        <tr>
-            {columns.map((col) => (
-                <th key={col.key} onClick={() => handleSort(col.key)}>
-                    {col.name}
-                    {sortConfig.key === col.key && (
-                        <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
-                    )}
-                </th>
-            )}
-        </tr>
-    );
+            <tr>
+                {
+                    columns.map((col) => (
+                        <th key={col.key} onClick={() => handleSort(col.key)}>
+                            {col.name}
+                            {sortConfig.key === col.key && (<span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>)
+                            }
+                        </th>
+                    ))
+            }
+            </tr>
+        )
+
 
     const pageCount = Math.ceil(tableData.length / itemsPerPage);
     const pages = new Array(pageCount).fill(null).map((_, i) => i);

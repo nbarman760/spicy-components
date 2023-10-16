@@ -8,7 +8,7 @@ const DataTable = ({ data, columns }) => {
     const itemsPerPage = 10;
 
     useEffect(() => {
-        const sortedData = [...tableData];
+        const sortedData = [...data];
         if (sortConfig.key) {
             sortedData.sort((a, b) => {
                 if (a[sortConfig.key] < b[sortConfig.key]) {

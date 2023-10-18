@@ -1,4 +1,4 @@
 #create .tgz file 
-npm pack
+npm run publish:npm
 #publish to npm
 npm publish

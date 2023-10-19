@@ -6,8 +6,8 @@
 } */
 
 .wrapper {
-  margin: 30px;
-  padding: 30px;
+  /* margin: 30px;
+  padding: 30px; */
   background: #fff;
   width: 100%;
   height: 640px;
@@ -36,7 +36,7 @@
     background-position: 468px 0;
   }
 }
-.animated-background, .cell, .full-header{
+.animated-background, .cell, .full-header, .button-loader, .searchbox{
   -webkit-animation-duration: 1.25s;
           animation-duration: 1.25s;
   -webkit-animation-fill-mode: forwards;
@@ -62,15 +62,23 @@
 .full-header{
    width: 100%;
    margin-bottom: 2px;
-   height: 20px;
+   height: 40px;
 }
 
-/* .text {
-  margin-left: 20px;
+.toolbox{
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
-.text-line {
-  height: 10px;
-  width: 100%;
-  margin: 4px 0;
-} */
+.searchbox{
+  height: 40px;
+  width: 25%;
+}
+.space{
+  width: 40%;
+}
+.button-loader{
+  width: 10%;
+  height: 40px;
+  margin-left: 5px;
+}

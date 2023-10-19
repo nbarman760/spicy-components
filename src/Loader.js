@@ -17,6 +17,13 @@ const Loader = () => {
   return (
     <div classNameName={`loading-spinner ${loading ? 'show' : 'hide'}`}>
       <div className="wrapper">
+        <div className='toolbox'>
+            <div className='searchbox'></div>
+            <div className='space'></div>
+            <div className='button-loader'></div>
+            <div className='button-loader'></div>
+            <div className='button-loader'></div>
+        </div>
         <div className='full-header'></div>
         {
           loaderRows.map((row) => (<div className="wrapper-cell">

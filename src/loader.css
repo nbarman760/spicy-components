@@ -1,37 +1,71 @@
-.loading-spinner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    transition: opacity 0.3s;
-    opacity: 0;
+body {
+  background: #E9E9E9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  margin: 30px;
+  padding: 30px;
+  background: #fff;
+  width: 360px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-cell {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
   }
-  
-  .loading-spinner.show {
-    opacity: 1;
+  100% {
+    background-position: 468px 0;
   }
-  
-  .loading-spinner.hide {
-    opacity: 0;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
   }
-  
-  .spinner {
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #4267B2; /* Facebook blue color */
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 2s linear infinite;
+  100% {
+    background-position: 468px 0;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
+}
+.animated-background, .text-line, .image {
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+          animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: #F6F6F6;
+  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+  background-size: 800px 104px;
+  height: 96px;
+  position: relative;
+}
+
+.image {
+  height: 60px;
+  width: 60px;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+.text-line {
+  height: 10px;
+  width: 230px;
+  margin: 4px 0;
+}

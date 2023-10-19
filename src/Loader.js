@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './loader.css';
 const Loader = () => {
   const [loading, setLoading] = useState(true);
-  const loaderRows = [];
+  const loaderRows = [1,2,3,4,4,5,6,7,7,8,8,9,9,0,3,45,5,6];
   useEffect(() => {
     // Simulate loading with a delay
-    for (let i = 0; i < 15; i++) {
-      loaderRows.push('');
-    }
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);

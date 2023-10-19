@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './loader.css';
-const Loader = () => {
+const TableLoader = () => {
   const [loading, setLoading] = useState(true);
   const loaderRows = [1,2,3,4,4,5,6,7,7,8,8,9,9,0,3,45,5,6];
   useEffect(() => {
@@ -44,4 +44,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default TableLoader;

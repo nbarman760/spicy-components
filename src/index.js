@@ -1,5 +1,6 @@
 import  Label  from './Label';
 import Textbox from './Textbox';
 import DataTable from './DataTable';
-import Loader from './Loader';
-export {Label, Textbox, DataTable, Loader}; 
+import TableLoader from './TableLoader';
+import Loader from './components/Loader';
+export {Label, Textbox, DataTable, TableLoader, Loader}; 

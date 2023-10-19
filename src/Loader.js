@@ -15,61 +15,42 @@ const Loader = () => {
   }, []);
 
   return (
-    <div className={`loading-spinner ${loading ? 'show' : 'hide'}`}>
-      <div class="wrapper">
-        <div class="wrapper-cell">
-          <div class="image"></div>
-          <div class="text">
-            <div class="text-line"> </div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-          </div>
+    <div classNameName={`loading-spinner ${loading ? 'show' : 'hide'}`}>
+      <div className="wrapper">
+        <div className="wrapper-cell">
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
         </div>
-        <div class="wrapper-cell">
-          <div class="image"></div>
-          <div class="text">
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"> </div>
-          </div>
+        <div className="wrapper-cell">
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
         </div>
-        <div class="wrapper-cell">
-          <div class="image"></div>
-          <div class="text">
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-          </div>
+        <div className="wrapper-cell">
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
         </div>
-        <div class="wrapper-cell">
-          <div class="image"></div>
-          <div class="text">
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-          </div>
+        <div className="wrapper-cell">
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
         </div>
-        <div class="wrapper-cell">
-          <div class="image"></div>
-          <div class="text">
-            <div class="text-line"> </div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-          </div>
-        </div>
-        <div class="wrapper-cell">
-          <div class="image"></div>
-          <div class="text">
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-            <div class="text-line"></div>
-          </div>
+        <div className="wrapper-cell">
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
+             <div className='cell'></div>
         </div>
       </div>
     </div>

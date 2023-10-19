@@ -37,7 +37,7 @@
     background-position: 468px 0;
   }
 }
-.animated-background, .text-line, .image {
+.animated-background, .cell {
   -webkit-animation-duration: 1.25s;
           animation-duration: 1.25s;
   -webkit-animation-fill-mode: forwards;
@@ -55,12 +55,12 @@
   position: relative;
 }
 
-.image {
-  height: 60px;
+.cell {
+  height: 50px;
   width: 20%;
 }
 
-.text {
+/* .text {
   margin-left: 20px;
 }
 
@@ -68,4 +68,4 @@
   height: 10px;
   width: 100%;
   margin: 4px 0;
-}
+} */

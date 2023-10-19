@@ -189,6 +189,7 @@ input[type="text"]:focus {
     margin-left: -32px;
 }
 
+.more-actions:hover .more-actions-dropdown,
 .more-actions-button:hover+.more-actions-dropdown {
     display: block;
 }

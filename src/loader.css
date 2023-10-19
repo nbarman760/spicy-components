@@ -1,15 +1,15 @@
-body {
+/* body {
   background: #E9E9E9;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .wrapper {
   margin: 30px;
   padding: 30px;
   background: #fff;
-  width: 360px;
+  width: 100%;
   height: 640px;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ body {
 
 .image {
   height: 60px;
-  width: 60px;
+  width: 20%;
 }
 
 .text {
@@ -66,6 +66,6 @@ body {
 
 .text-line {
   height: 10px;
-  width: 230px;
+  width: 100%;
   margin: 4px 0;
 }

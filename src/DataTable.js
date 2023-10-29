@@ -5,7 +5,7 @@ const defaultProps = {
     data: [],
     columns: [],
     clickAddHandle: ()=>{
-        
+
     }
 }
 const DataTable = (props) => {
@@ -136,7 +136,7 @@ const DataTable = (props) => {
                 </div>
                 <div className="table-tools-right">
                     <button className="download-button">Download Excel</button>
-                    <button className="add-row-button" onClick={clickAddHandle}>Add Row</button>
+                    <button className="add-row-button" onClick={props.clickAddHandle}>Add Row</button>
                     <div className="more-actions">
                         <button className="more-actions-button">More Actions</button>
                         <div className="more-actions-dropdown">

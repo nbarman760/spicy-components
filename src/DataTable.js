@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './style.css'
-const DataTable = ({ data, columns }) => {
+
+const defaultProps = {
+    data: [],
+    columns: [],
+    clickAddHandle: ()=>{
+        
+    }
+}
+const DataTable = (props) => {
+    props = {...defaultProps, ...props}
+    const { data, columns } = props;
     const [tableData, setTableData] = useState(data);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const [searchTerm, setSearchTerm] = useState('');
@@ -126,7 +136,7 @@ const DataTable = ({ data, columns }) => {
                 </div>
                 <div className="table-tools-right">
                     <button className="download-button">Download Excel</button>
-                    <button className="add-row-button">Add Row</button>
+                    <button className="add-row-button" onClick={clickAddHandle}>Add Row</button>
                     <div className="more-actions">
                         <button className="more-actions-button">More Actions</button>
                         <div className="more-actions-dropdown">

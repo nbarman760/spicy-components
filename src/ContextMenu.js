@@ -23,7 +23,7 @@ function ContextMenu({ top, left, onClose, onEdit, onDelete }) {
         <li onClick={onEdit}>Edit</li>
         <li onClick={onDelete}>Delete</li>
       </ul>
-      <button onClick={onClose}>Close</button>
+      {/* <button onClick={onClose}>Close</button> */}
     </div>
   );
 }

@@ -18,6 +18,7 @@ const DataTable = (props) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [contextMenuVisible, setContextMenuVisible] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
+    const [targetItem, setTargetItem]=useState(null);
     const itemsPerPage = 10;
 
     useEffect(() => {
@@ -59,8 +60,9 @@ const DataTable = (props) => {
         setCurrentPage(newPage);
     };
 
-    const handleContextMenu = (e) => {
+    const handleContextMenu = (e,item) => {
         e.preventDefault();
+        setTargetItem(item);
         setContextMenuPosition({ top: e.clientY, left: e.clientX });
         setContextMenuVisible(true);
     };
@@ -69,6 +71,13 @@ const DataTable = (props) => {
         setContextMenuVisible(false);
     };
 
+    const handleDelete=()=>{
+        onDelete(targetItem)
+    }
+    const handleEdit=()=>{
+        onEdit(targetItem)
+    }
+
 
     const renderTableData = () => {
         const start = currentPage * itemsPerPage;
@@ -76,32 +85,13 @@ const DataTable = (props) => {
         const currentData = tableData.slice(start, end);
 
         return currentData.map((item, index) => (
-            <tr key={index} onContextMenu={handleContextMenu}>
+            <tr key={index} onContextMenu={handleContextMenu(e, item)}>
                 {columns.map((col) => (
                     <td key={col.key}>{col.displayFunction ? col.displayFunction(item[col.key]) : item[col.key]}</td>
                 ))}
-                {contextMenuVisible && (
-                    <ContextMenu
-                        top={contextMenuPosition.top}
-                        left={contextMenuPosition.left}
-                        onClose={closeContextMenu}
-                        onEdit={() => {
-                            onEdit(item.id);
-                            closeContextMenu();
-                        }}
-                        onDelete={() => {
-                            onDelete(item.id);
-                            closeContextMenu();
-                        }}
-                    />
-                )}
             </tr>
         ));
     };
-
-
-
-
 
     const renderTableHeader = () => (
         <tr>
@@ -183,6 +173,21 @@ const DataTable = (props) => {
                 <thead>{renderTableHeader()}</thead>
                 <tbody>{renderTableData()}</tbody>
             </table>
+            {contextMenuVisible && (
+                <ContextMenu
+                    top={contextMenuPosition.top}
+                    left={contextMenuPosition.left}
+                    onClose={closeContextMenu}
+                    onEdit={() => {
+                        handleEdit();
+                        closeContextMenu();
+                    }}
+                    onDelete={() => {
+                        handleDelete();
+                        closeContextMenu();
+                    }}
+                />
+            )}
             <div className="pagination">
                 {pagination()}
                 {/* {pages.map((page) => (

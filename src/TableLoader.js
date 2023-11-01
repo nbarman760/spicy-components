@@ -26,17 +26,17 @@ const TableLoader = () => {
         </div>
         <div className='full-header'></div>
         {
-          loaderRows.map((row) => (<div className="wrapper-cell">
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
-            <div className='cell'></div>
+          loaderRows.map((row, index) => (<div className="wrapper-cell" key={index}>
+            <div className='cell' key={'t1'+index}></div>
+            <div className='cell' key={'t2'+index}></div>
+            <div className='cell' key={'t3'+index}></div>
+            <div className='cell' key={'t4'+index}></div>
+            <div className='cell' key={'t5'+index}></div>
+            <div className='cell' key={'t6'+index}></div>
+            <div className='cell' key={'t7'+index}></div>
+            <div className='cell' key={'t8'+index}></div>
+            <div className='cell' key={'t9'+index}></div>
+            <div className='cell' key={'t10'+index}></div>
           </div>))
         }
       </div>

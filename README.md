@@ -87,7 +87,7 @@ Data Table Feature: Our data table component is a versatile tool for presenting 
 
 ## Image reprsentation
 
-![Image Alt Text](./images/image.jpg)
+![Image Alt Text](https://raw.githubusercontent.com/nbarman760/spicy-components/master/images/table.png)
 
 
 

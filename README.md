@@ -1,14 +1,11 @@
 # What is Spicy Components?
 Spicy Components is a collection of reusable and customizable UI components for building modern web applications with a spicy touch. These components are designed to enhance the user experience and make it easy for developers to create visually appealing and interactive interfaces.
 
-# Features
-A wide range of UI components, from buttons and forms to sliders and modals.
-Highly customizable styles and themes to match your application's look and feel.
-Built with performance and accessibility in mind.
-Easy integration with popular frontend frameworks like React, Vue, and Angular.
-Detailed documentation and examples to get you started quickly.
-Getting Started
-To start using Spicy Components in your project, you can follow these steps:
+# Components
+  1. Data table (Grid)
+  2. Table Loader
+  3. Form Element
+        - Text Input Box
 
 ## Installation
 
@@ -37,7 +34,13 @@ Here are some examples of how you can use Spicy Components:
 ## Data Table
 Data Table Feature: Our data table component is a versatile tool for presenting and managing tabular data in your web application. It includes built-in sorting, searching, and the ability to download data to Excel for offline use. Each row offers a context menu for easy editing and deletion, simplifying data management tasks, while the "Add New" button provides a straightforward way to insert new records into the table. This feature-rich data table improves data interaction, organization, and user experience.
 
-
+### Features
+  - Sorting
+  - Searching
+  - Pagination
+  - Right click (Edit/Delete) Panel
+  - Download to Excel
+  - Add new buttons
 
 ``` JSX
 
@@ -84,8 +87,6 @@ Data Table Feature: Our data table component is a versatile tool for presenting 
     )
 
 ```
-
-## Image reprsentation
 
 ![Image Alt Text](https://raw.githubusercontent.com/nbarman760/spicy-components/master/images/table.png)
 

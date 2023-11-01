@@ -22,7 +22,7 @@ const Textbox = (props)=> {
                 <input
                     type="text"
                     className="outline-text-input"
-                    placeholder={props.placeholder ? props.placeholder : props.label}
+                    placeholder={props.label}
                     name={props.name}
                     value={props.value}
                     autoComplete='off'

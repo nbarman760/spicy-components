@@ -238,8 +238,8 @@ button[disabled] {
   
   .placeholder-label {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 9px;
+    left: 7px;
     pointer-events: none;
     color: #aaa;
     transition: top 0.2s, font-size 0.2s;
@@ -251,7 +251,8 @@ button[disabled] {
   
   .outline-text-input:focus + .placeholder-label,
   .outline-text-input:not(:placeholder-shown) + .placeholder-label {
-    top: 0;
+    top: -10px;
+    background: white;
     font-size: 12px;
     color: #007BFF;
   }

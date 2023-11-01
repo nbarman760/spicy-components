@@ -34,18 +34,54 @@ For more detailed information on how to use each component and customize them, c
 Examples
 Here are some examples of how you can use Spicy Components:
 
-``` JSX
-import { TextBox, DataTable } from 'spicy-components';
+## Data Table
+Data Table Feature: Our data table component is a versatile tool for presenting and managing tabular data in your web application. It includes built-in sorting, searching, and the ability to download data to Excel for offline use. Each row offers a context menu for easy editing and deletion, simplifying data management tasks, while the "Add New" button provides a straightforward way to insert new records into the table. This feature-rich data table improves data interaction, organization, and user experience.
 
-return (
-     <Textbox
-        placeholder={`Service Name`}
-        required={true}
-        name="name"
-        label={`Service Name`}
-        onChange={handleChange}
-    />
-)
+
+
+``` JSX
+
+    import {DataTable} from 'spicy-components';
+    const data = [
+        {
+            firstName: "JOE",
+            height: "6ft",
+            email: "joe@email.com"
+        }
+    ]
+    const columns = [
+        {
+            name: "Name",
+            key: "name",
+            displayFunction: (item)=> item.toLowerCase()
+        },
+        {
+            name: "Email",
+            key: "email"
+        }
+    ]
+
+    /*** on click on edit in context menu */
+    const handleEditItem = (e)=>{
+        console.log(e);  // row information available here
+    }
+    /*** on click on delete in context menu */
+    const handleDeleteItem = (e)=>{
+        console.log(e) // row information available here
+    }
+    const handleAddButtonClick=()=>{
+        //// add new button click handler
+    }
+    return (
+        <div>
+           <DataTable
+                data={data} 
+                columns={columns}
+                clickAddHandle={handleAddButtonClick}
+                onEdit={handleEditItem}
+                onDelete={handleDeleteItem}
+            />
+    )
 
 ```
 

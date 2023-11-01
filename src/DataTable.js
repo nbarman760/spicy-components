@@ -65,7 +65,7 @@ const DataTable = (props) => {
             <tr key={index}>
                 {columns.map((col) => (
                     <td key={col.key}>{col.displayFunction ? col.displayFunction(item[col.key]) : item[col.key]}</td>
-                ))}
+                ))} 
             </tr>
         ));
     };

@@ -85,7 +85,7 @@ const DataTable = (props) => {
         const currentData = tableData.slice(start, end);
 
         return currentData.map((item, index) => (
-            <tr key={index} onContextMenu={handleContextMenu(e, item)}>
+            <tr key={index} onContextMenu={($event)=>handleContextMenu($event, item)}>
                 {columns.map((col) => (
                     <td key={col.key}>{col.displayFunction ? col.displayFunction(item[col.key]) : item[col.key]}</td>
                 ))}

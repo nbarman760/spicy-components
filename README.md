@@ -16,10 +16,7 @@ npm install spicy-components
 # or
 yarn add spicy-components
 ```
-## Usage
-``` bash
-import { Button, Input, Modal } from 'spicy-components';
-```
+
 ## Customization
 
 You can easily customize the style and appearance of the components to fit your project's design. Spicy Components provides options and CSS classes for customization.
@@ -90,6 +87,21 @@ Data Table Feature: Our data table component is a versatile tool for presenting 
 
 ![Image Alt Text](https://raw.githubusercontent.com/nbarman760/spicy-components/master/images/table.png)
 
+## Table Loader
+ 
+ Its very simple to implements in React application
+
+ ``` JSX
+ import { TableLoader } from 'spicy-components';
+
+ // inside render or return function
+
+ return (
+    <TableLoader/>
+ )
+
+```
+![Alt Text](https://raw.githubusercontent.com/nbarman760/spicy-components/master/images/table-loader.gif)
 
 
 

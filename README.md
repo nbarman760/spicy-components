@@ -34,19 +34,19 @@ For more detailed information on how to use each component and customize them, c
 Examples
 Here are some examples of how you can use Spicy Components:
 
-``` bash
-import { Button, Input, Modal } from 'spicy-components';
+``` JSX
+import { TextBox, DataTable } from 'spicy-components';
 
-// Create a button
-<Button text="Click me" onClick={() => alert('Button clicked')} />
+return (
+     <Textbox
+        placeholder={`Service Name`}
+        required={true}
+        name="name"
+        label={`Service Name`}
+        onChange={handleChange}
+    />
+)
 
-// Create an input field
-<Input type="text" placeholder="Enter your name" />
-
-// Create a modal
-<Modal title="Welcome" isOpen={true}>
-  Welcome to Spicy Components!
-</Modal>
 ```
 
 

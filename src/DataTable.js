@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './style.css'
+import ContextMenu from './ContextMenu';
 
 const defaultProps = {
     data: [],
     columns: [],
-    clickAddHandle: ()=>{
+    clickAddHandle: () => {
 
     }
 }
 const DataTable = (props) => {
-    props = {...defaultProps, ...props}
-    const { data, columns } = props;
+    props = { ...defaultProps, ...props }
+    const { data, columns, onEdit, onDelete } = props;
     const [tableData, setTableData] = useState(data);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
+    const [contextMenuVisible, setContextMenuVisible] = useState(false);
+    const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
     const itemsPerPage = 10;
 
     useEffect(() => {
@@ -56,19 +59,48 @@ const DataTable = (props) => {
         setCurrentPage(newPage);
     };
 
+    const handleContextMenu = (e) => {
+        e.preventDefault();
+        setContextMenuPosition({ top: e.clientY, left: e.clientX });
+        setContextMenuVisible(true);
+    };
+
+    const closeContextMenu = () => {
+        setContextMenuVisible(false);
+    };
+
+
     const renderTableData = () => {
         const start = currentPage * itemsPerPage;
         const end = start + itemsPerPage;
         const currentData = tableData.slice(start, end);
 
         return currentData.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} onContextMenu={handleContextMenu}>
                 {columns.map((col) => (
                     <td key={col.key}>{col.displayFunction ? col.displayFunction(item[col.key]) : item[col.key]}</td>
-                ))} 
+                ))}
+                {contextMenuVisible && (
+                    <ContextMenu
+                        top={contextMenuPosition.top}
+                        left={contextMenuPosition.left}
+                        onClose={closeContextMenu}
+                        onEdit={() => {
+                            onEdit(item.id);
+                            closeContextMenu();
+                        }}
+                        onDelete={() => {
+                            onDelete(item.id);
+                            closeContextMenu();
+                        }}
+                    />
+                )}
             </tr>
         ));
     };
+
+
+
 
 
     const renderTableHeader = () => (

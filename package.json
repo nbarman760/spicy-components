@@ -4,6 +4,7 @@
   "description": "React Form Elements with Validation",
   "main": "dist/index.js",
   "private": false,
+  "keywords": ["react", "component", "table", "data", "datatable", "spicy", "components", "spicy-components"],
   "babel": {
     "presets": [
       "@babel/preset-react"

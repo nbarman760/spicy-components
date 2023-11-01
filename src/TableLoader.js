@@ -15,7 +15,7 @@ const TableLoader = () => {
   }, []);
 
   return (
-    <div className={`loading-spinner ${loading ? 'show' : 'hide'}`}>
+    <div className="table-loader">
       <div className="wrapper">
         <div className='toolbox'>
             <div className='searchbox'></div>

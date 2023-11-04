@@ -18,7 +18,10 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
     const [targetItem, setTargetItem] = useState(null);
     const itemsPerPage = 10;
-
+    useEffect(() => {
+        setTableData(data); // Update the tableData when data prop changes
+    }, [data]); 
+    
     useEffect(() => {
         const sortedData = [...data];
         if (sortConfig.key) {

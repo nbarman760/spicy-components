@@ -16,7 +16,7 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
     const [currentPage, setCurrentPage] = useState(0);
     const [contextMenuVisible, setContextMenuVisible] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
-    const [targetItem, setTargetItem]=useState(null);
+    const [targetItem, setTargetItem] = useState(null);
     const itemsPerPage = 10;
 
     useEffect(() => {
@@ -58,7 +58,7 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
         setCurrentPage(newPage);
     };
 
-    const handleContextMenu = (e,item) => {
+    const handleContextMenu = (e, item) => {
         e.preventDefault();
         setTargetItem(item);
         setContextMenuPosition({ top: e.clientY, left: e.clientX });
@@ -69,10 +69,10 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
         setContextMenuVisible(false);
     };
 
-    const handleDelete=()=>{
+    const handleDelete = () => {
         onDelete(targetItem)
     }
-    const handleEdit=()=>{
+    const handleEdit = () => {
         onEdit(targetItem)
     }
 
@@ -83,7 +83,7 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
         const currentData = tableData.slice(start, end);
 
         return currentData.map((item, index) => (
-            <tr key={index} onContextMenu={($event)=>handleContextMenu($event, item)}>
+            <tr key={index} onContextMenu={($event) => handleContextMenu($event, item)}>
                 {columns.map((col) => (
                     <td key={col.key}>{col.displayFunction ? col.displayFunction(item[col.key]) : item[col.key]}</td>
                 ))}
@@ -142,6 +142,10 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
         )
     }
 
+    const handleStatusChange = (e)=>{
+        statusChange(e);
+    }
+
     return (
         <div>
             <div className="table-tools">
@@ -155,16 +159,16 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
                     />
                 </div>
                 <div className="search-box">
-                <select id="dropdown" name="status" onChange={statusChange}>
-                    <option value="active">Active</option>
-                    <option value="delete">Deleted</option>
-                    <option value="all">All</option>
-                </select>
-                 </div>
+                    <select id="dropdown" name="status" onChange={(e)=>handleStatusChange(e)}>
+                        <option value="active">Active</option>
+                        <option value="delete">Deleted</option>
+                        <option value="all">All</option>
+                    </select>
+                </div>
                 <div className="table-tools-right">
-                    <button className="download-button" title="Download As Excel">
+                    {/* <button className="download-button" title="Download As Excel">
 
-                    </button>
+                    </button> */}
                     <button className="add-row-button" onClick={clickAddHandle}>Add New</button>
                     <div className="more-actions">
                         <button className="more-actions-button">More Actions</button>

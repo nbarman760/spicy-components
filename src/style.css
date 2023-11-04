@@ -14,7 +14,7 @@
 }
 
 .table tbody tr:hover {
-     background-color: brown;
+    background-color: brown;
 }
 
 
@@ -110,7 +110,7 @@ input[type="text"] {
 .search-box {
     display: flex;
     align-items: center;
-    width: 25%;
+    width: 30%;
 }
 
 input[type="text"] {
@@ -215,17 +215,18 @@ input[type="text"]:focus {
 
 button:disabled,
 button[disabled] {
-   cursor: not-allowed;
+    cursor: not-allowed;
 }
+
 /****TextBox******************/
 
 .textbox__container {
     position: relative;
     width: 100%;
     margin: 5px;
-  }
-  
-  .outline-text-input {
+}
+
+.outline-text-input {
     width: 100%;
     padding: 10px;
     border: 2px solid #ccc;
@@ -234,33 +235,33 @@ button[disabled] {
     outline: none;
     transition: border-color 0.2s;
     box-sizing: border-box;
-  }
-  
-  .placeholder-label {
+}
+
+.placeholder-label {
     position: absolute;
     top: 9px;
     left: 7px;
     pointer-events: none;
     color: #aaa;
     transition: top 0.2s, font-size 0.2s;
-  }
-  
-  .outline-text-input:focus {
+}
+
+.outline-text-input:focus {
     border-color: #007BFF;
-  }
-  
-  .outline-text-input:focus + .placeholder-label,
-  .outline-text-input:not(:placeholder-shown) + .placeholder-label {
+}
+
+.outline-text-input:focus+.placeholder-label,
+.outline-text-input:not(:placeholder-shown)+.placeholder-label {
     top: -10px;
     background: white;
     font-size: 12px;
     color: #007BFF;
-  }
-  
+}
 
-  /**********************Context menu*************************/
 
-  .context-menu {
+/**********************Context menu*************************/
+
+.context-menu {
     position: absolute;
     background-color: #fff;
     border: 1px solid #e0e0e0;
@@ -269,27 +270,27 @@ button[disabled] {
     z-index: 1000;
     padding: 5px 0;
     min-width: 135px;
-  }
-  
-  .context-menu ul {
+}
+
+.context-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .context-menu ul li {
+}
+
+.context-menu ul li {
     padding: 0px;
     cursor: pointer;
     padding-left: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .context-menu ul li:hover {
+}
+
+.context-menu ul li:hover {
     background-color: #f0f0f0;
-  }
-  
-  .context-menu button {
+}
+
+.context-menu button {
     width: 100%;
     padding: 10px;
     cursor: pointer;
@@ -298,21 +299,22 @@ button[disabled] {
     border: none;
     border-radius: 4px;
     transition: background-color 0.3s;
-  }
-  
-  .context-menu button:hover {
-    background-color: #0056b3;
-  }
-  
-  /**********************Context menu end*************************/
+}
 
-  #dropdown {
-    padding: 10px;
+.context-menu button:hover {
+    background-color: #0056b3;
+}
+
+/**********************Context menu end*************************/
+
+#dropdown {
+    padding: 9px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 200px;
     outline: none;
     cursor: pointer;
+    margin-top: -19px;
 }
 
 /* Style the dropdown options */
@@ -323,7 +325,8 @@ button[disabled] {
 
 /* Style the dropdown on hover */
 #dropdown:hover {
-    border-color: #3498db; /* Change the color on hover */
+    border-color: #3498db;
+    /* Change the color on hover */
 }
 
 /* Style the selected option */

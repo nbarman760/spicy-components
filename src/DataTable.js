@@ -9,9 +9,7 @@ const defaultProps = {
 
     }
 }
-const DataTable = (props) => {
-    props = { ...defaultProps, ...props }
-    const { data, columns, onEdit, onDelete } = props;
+const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChange }) => {
     const [tableData, setTableData] = useState(data);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
     const [searchTerm, setSearchTerm] = useState('');
@@ -156,9 +154,18 @@ const DataTable = (props) => {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                 </div>
+                <div className="search-box">
+                <select id="dropdown" name="status" onChange={statusChange}>
+                    <option value="active">Active</option>
+                    <option value="delete">Deleted</option>
+                    <option value="all">All</option>
+                </select>
+                 </div>
                 <div className="table-tools-right">
-                    <button className="download-button">Download Excel</button>
-                    <button className="add-row-button" onClick={props.clickAddHandle}>Add Row</button>
+                    <button className="download-button" title="Download As Excel">
+
+                    </button>
+                    <button className="add-row-button" onClick={clickAddHandle}>Add New</button>
                     <div className="more-actions">
                         <button className="more-actions-button">More Actions</button>
                         <div className="more-actions-dropdown">

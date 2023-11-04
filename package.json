@@ -1,6 +1,6 @@
 {
   "name": "spicy-components",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "React Form Elements with Validation",
   "main": "dist/index.js",
   "private": false,

@@ -21,7 +21,7 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
     useEffect(() => {
         setTableData(data); // Update the tableData when data prop changes
     }, [data]); 
-    
+
     useEffect(() => {
         const sortedData = [...data];
         if (sortConfig.key) {
@@ -88,7 +88,11 @@ const DataTable = ({ data, columns, onEdit, onDelete, clickAddHandle, statusChan
         return currentData.map((item, index) => (
             <tr key={index} onContextMenu={($event) => handleContextMenu($event, item)}>
                 {columns.map((col) => (
-                    <td key={col.key}>{col.displayFunction ? col.displayFunction(item[col.key]) : item[col.key]}</td>
+                    <td key={col.key}>{
+                        col.displayFunction ? 
+                        (<span innerHTML={col.displayFunction(item[col.key])}></span>)
+                        : item[col.key]
+                    }</td>
                 ))}
             </tr>
         ));

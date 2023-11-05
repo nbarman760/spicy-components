@@ -46,18 +46,6 @@ const DataTable = ({
                 return 0;
             });
         }
-
-        const toggleSelectAll = () => {
-            if (selectedItems.length === tableData.length) {
-                // Deselect all items if all are selected
-                setSelectedItems([]);
-            } else {
-                // Select all items
-                setSelectedItems(tableData.map((item) => item)); // You can use a unique identifier as well
-            }
-            onItemSelected(selectedItems)
-        };
-
         const filteredData = sortedData.filter((item) =>
             Object.values(item).some((value) =>
                 value.toString().toLowerCase().includes(searchTerm.toLowerCase())
@@ -106,23 +94,36 @@ const DataTable = ({
     const toggleSelectAll = () => {
         if (selectedItems.length === tableData.length) {
             // Deselect all items if all are selected
-            setSelectedItems([]);
+            setSelectedItems((prevSelectedItems)=>{
+                onItemSelected([]);
+                return [];
+            });
         } else {
             // Select all items
-            setSelectedItems(tableData.map((item) => item)); // You can use a unique identifier as well
+            setSelectedItems((prevSelectedItems)=>{
+                const updatedSelectedItems = tableData.map((item) => item);
+                onItemSelected(updatedSelectedItems);
+                return updatedSelectedItems;
+            }); // You can use a unique identifier as well
         }
-        onItemSelected(selectedItems)
+       
     };
-
     const toggleSelectItem = (item) => {
         if (isSelected(item)) {
             // Deselect the item
-            setSelectedItems(selectedItems.filter((selected) => selected !== item));
+            setSelectedItems((prevSelectedItems)=>{
+                let updatedSelectedItems = prevSelectedItems.filter((selected) => selected !== item);
+                onItemSelected(updatedSelectedItems);
+                return updatedSelectedItems;
+            });
         } else {
             // Select the item
-            setSelectedItems([...selectedItems, item]);
+            setSelectedItems((prevSelectedItems)=>{
+                let updatedSelectedItems = [...prevSelectedItems, item];
+                onItemSelected(updatedSelectedItems);
+                return updatedSelectedItems;
+            });
         }
-        onItemSelected(selectedItems)
     };
     const customCheckboxStyle = {
         display: "inline-block",

@@ -334,3 +334,8 @@ button[disabled] {
     background-color: #3498db;
     color: #fff;
 }
+.optional{
+    border: 1px solid gray;
+    color: gray;
+    
+}

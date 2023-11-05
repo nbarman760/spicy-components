@@ -34,7 +34,7 @@ const Textbox = (props)=> {
                     autoComplete='off'
                     onChange={handleInputChange}
                 />
-                <label className="placeholder-label">{props.label}</label>
+                <label className="placeholder-label">{props.required ? '*': (<span className='optional'>!</span>) }{props.label}</label>
             </div>
         </>
     )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./styles.css";
+import "./style.css";
 import ContextMenu from "./ContextMenu";
 
 const defaultProps = {

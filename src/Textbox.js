@@ -9,7 +9,7 @@ const defaultProps = {
 }
 
 const Textbox = (props)=> {
-    props = {...defaultProps, props};
+    props = {...defaultProps, ...props};
     const [isValid, setIsValid]= useState(true);
     const handleInputChange =(e)=>{
             if(props.required){

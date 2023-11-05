@@ -157,7 +157,11 @@ const DataTable = ({
                 {columns.map((col) => (
                     <td key={col.key}>
                         {col.displayFunction ? (
-                            <span innerHTML={col.displayFunction(item[col.key])}></span>
+                            <span
+                            dangerouslySetInnerHTML={{
+                              __html: col.displayFunction(item)
+                            }}
+                          ></span>
                         ) : (
                             item[col.key]
                         )}

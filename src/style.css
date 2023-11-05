@@ -238,6 +238,7 @@ button[disabled] {
 }
 
 .placeholder-label {
+    display: none;
     position: absolute;
     top: 9px;
     left: 7px;
@@ -256,6 +257,7 @@ button[disabled] {
     background: white;
     font-size: 12px;
     color: #007BFF;
+    display: block;
 }
 
 
@@ -337,5 +339,5 @@ button[disabled] {
 .optional{
     border: 1px solid gray;
     color: gray;
-    
+
 }

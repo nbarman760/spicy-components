@@ -1,0 +1,46 @@
+/* Add appropriate styling to match your design */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    width: 200px;
+  }
+  
+  .dropdown-select {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  .dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    /* display: none; */
+    width: inherit;
+  }
+  
+  .dropdown-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .dropdown-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown-list li:first-child {
+    border-top: 1px solid #ccc;
+  }
+  
+  .dropdown-list li:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  

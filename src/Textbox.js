@@ -3,8 +3,13 @@ import { useState } from 'react';
 import React from 'react';
 
 import './style.css';
+const defaultProps = {
+    disabled: false,
+    required: false
+}
 
 const Textbox = (props)=> {
+    props = {...defaultProps, props};
     const [isValid, setIsValid]= useState(true);
     const handleInputChange =(e)=>{
             if(props.required){
@@ -25,6 +30,7 @@ const Textbox = (props)=> {
                     placeholder={props.label}
                     name={props.name}
                     value={props.value}
+                    disabled={props.disabled}
                     autoComplete='off'
                     onChange={handleInputChange}
                 />

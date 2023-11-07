@@ -8,7 +8,6 @@ const defaultProps = {
     required: false
 }
 
-const inputClassName = `outline-text-input ${isValid ? '' : 'invalid-input'}`;
 
 const Textbox = (props)=> {
     props = {...defaultProps, ...props};
@@ -23,12 +22,13 @@ const Textbox = (props)=> {
             }
             props.onChange(e); 
     }
+    const inputClassName = `outline-text-input ${isValid ? '' : 'invalid-input'}`;
     return (
         <>
             <div className="textbox__container" id={props.name}>
                 <input
                     type={props.type ? props.type: 'text'}
-                    className={inputClassName} {/* Add the className here */}
+                    className={inputClassName}
                     placeholder={props.label}
                     name={props.name}
                     value={props.value}

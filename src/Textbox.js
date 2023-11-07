@@ -8,6 +8,8 @@ const defaultProps = {
     required: false
 }
 
+const inputClassName = `outline-text-input ${isValid ? '' : 'invalid-input'}`;
+
 const Textbox = (props)=> {
     props = {...defaultProps, ...props};
     const [isValid, setIsValid]= useState(true);
@@ -25,8 +27,8 @@ const Textbox = (props)=> {
         <>
             <div className="textbox__container" id={props.name}>
                 <input
-                    type="text"
-                    className="outline-text-input"
+                    type={props.type ? props.type: 'text'}
+                    className={inputClassName} {/* Add the className here */}
                     placeholder={props.label}
                     name={props.name}
                     value={props.value}

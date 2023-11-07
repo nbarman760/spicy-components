@@ -32,7 +32,7 @@ const Dropdown = ({ options, onSelect, placeholder }) => {
   return (
     <div className="dropdown" ref={dropdownRef}>
       <div className="dropdown-select" onClick={toggleDropdown}>
-        {selectedOption || placeholder || "Select an option"}
+        {selectedOption || placeholder || "Select an option"}{" ▼"}
       </div>
       {isOpen && (
         <ul className="dropdown-list">

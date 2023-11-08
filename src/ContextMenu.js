@@ -21,7 +21,7 @@ function ContextMenu({ top, left, onClose, onSelect, optionMenus }) {
     <div className="context-menu" style={{ top, left }} ref={menuRef}>
       <ul>
         {
-          optionMenus.map((menu, index)=>  <li key={index} onClick={()=>onSelect(menu.action)}>Edit</li>)
+          optionMenus.map((menu, index)=>  <li key={index} onClick={()=>onSelect(menu.action)}>{menu.label}</li>)
         }
         {/* <li onClick={onDelete}>Delete</li> */}
       </ul>

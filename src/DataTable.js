@@ -277,7 +277,7 @@ const DataTable = ({
                     onClose={closeContextMenu}
                     optionMenus={contextMenuOptions}
                     onSelect={(e) => {
-                        onSelectContextMenu(targetItem, e);
+                        onSelectContextMenu({item: targetItem, action: e});
                         closeContextMenu();
                     }}
                 />

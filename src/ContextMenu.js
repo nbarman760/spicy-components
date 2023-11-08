@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function ContextMenu({ top, left, onClose, onEdit, onDelete }) {
+function ContextMenu({ top, left, onClose, onSelect, optionMenus }) {
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -20,8 +20,10 @@ function ContextMenu({ top, left, onClose, onEdit, onDelete }) {
   return (
     <div className="context-menu" style={{ top, left }} ref={menuRef}>
       <ul>
-        <li onClick={onEdit}>Edit</li>
-        <li onClick={onDelete}>Delete</li>
+        {
+          optionMenus.map((menu, index)=>  <li key={index} onClick={()=>onSelect(menu.action)}>Edit</li>)
+        }
+        {/* <li onClick={onDelete}>Delete</li> */}
       </ul>
       {/* <button onClick={onClose}>Close</button> */}
     </div>

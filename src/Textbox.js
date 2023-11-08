@@ -20,7 +20,7 @@ const Textbox = (props)=> {
                     setIsValid(true);
                 }
             }
-            props.onChange(e); 
+            props.onChange({item: e, Valid: isValid}); 
     }
     const inputClassName = `outline-text-input ${isValid ? '' : 'invalid-input'}`;
     return (

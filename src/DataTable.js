@@ -10,11 +10,11 @@ const defaultProps = {
 const DataTable = ({
     data,
     columns,
-    onEdit,
-    onDelete,
     clickAddHandle,
     statusChange,
-    onItemSelected
+    onItemSelected,
+    contextMenuOptions,
+    onSelectContextMenu
 }) => {
     const [tableData, setTableData] = useState(data);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
@@ -82,12 +82,6 @@ const DataTable = ({
         setContextMenuVisible(false);
     };
 
-    const handleDelete = () => {
-        onDelete(targetItem);
-    };
-    const handleEdit = () => {
-        onEdit(targetItem);
-    };
 
     const isSelected = (item) => selectedItems.includes(item);
 
@@ -276,17 +270,14 @@ const DataTable = ({
                 <thead>{renderTableHeader()}</thead>
                 <tbody>{renderTableData()}</tbody>
             </table>
-            {contextMenuVisible && (
+            {(contextMenuVisible && contextMenuOptions.length> 0) && (
                 <ContextMenu
                     top={contextMenuPosition.top}
                     left={contextMenuPosition.left}
                     onClose={closeContextMenu}
-                    onEdit={() => {
-                        handleEdit();
-                        closeContextMenu();
-                    }}
-                    onDelete={() => {
-                        handleDelete();
+                    optionMenus={contextMenuOptions}
+                    onSelect={(e) => {
+                        onSelectContextMenu(targetItem, e);
                         closeContextMenu();
                     }}
                 />
